@@ -6,6 +6,8 @@ import { useCookbook } from "../CookbookContext";
 import "../styles/Recipe.css";
 import Ingredient from "../components/Ingredient";
 
+const ANCHOR_REGEX = /(<a(.+?)?>|<\/a>)/g;
+
 const Recipe = () => {
   const { fetchRecipe } = useRecipe();
   const { cookbookId, recipeId } = useParams();
@@ -89,16 +91,19 @@ const Recipe = () => {
       </div>
 
       <div id="recipe-image-container">
-        <img
-          id="recipe-image"
-          src={currentRecipe.image}
-          alt="Recipe"
-        ></img>
+        <img id="recipe-image" src={currentRecipe.image} alt="Recipe"></img>
       </div>
 
       <h2 className="recipe-section-header">Description</h2>
 
-      <p id="recipe-description">{currentRecipe.description}</p>
+      <p
+        id="recipe-description"
+        dangerouslySetInnerHTML={
+          currentRecipe.description && {
+            __html: currentRecipe.description.replace(ANCHOR_REGEX, ""),
+          }
+        }
+      ></p>
       <hr className="recipe-horizontal-rule"></hr>
 
       <div>
