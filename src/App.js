@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import Explore from "./pages/Explore";
+import Home from "./pages/Home";
+import Cookbooks from "./pages/Cookbooks";
+import Navbar from "./components/Navbar";
+import EditCookbook from "./pages/EditCookbook";
+import AddCookbook from "./pages/AddCookbook";
+import Cookbook from "./pages/Cookbook";
+import Recipe from "./pages/Recipe";
+import EditRecipe from "./pages/EditRecipe";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CookbookProvider } from "./CookbookContext";
+import { RecipeProvider } from "./RecipeContext";
+import { FilterProvider } from "./FilterContext";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <CookbookProvider>
+        <RecipeProvider>
+          <FilterProvider>
+            <Routes>
+              <Route path="/" element={<Navbar title="Impasta Rosta" />}>
+                <Route index element={<Home />} />
+                <Route path="explore" element={<Explore />} />
+                <Route path="cookbooks" element={<Cookbooks />} />
+                <Route path="cookbooks/:cookbookId" element={<Cookbook />} />
+                <Route
+                  path="cookbooks/:cookbookId/edit"
+                  element={<EditCookbook />}
+                />
+                <Route path="cookbooks/addcookbook" element={<AddCookbook />} />
+                <Route path="recipes/:recipeId" element={<Recipe />} />
+                <Route
+                  path="cookbooks/:cookbookId/recipes/:recipeId"
+                  element={<Recipe />}
+                />
+                <Route
+                  path="cookbooks/:cookbookId/recipes/:recipeId/edit"
+                  element={<EditRecipe />}
+                />
+              </Route>
+            </Routes>
+          </FilterProvider>
+        </RecipeProvider>
+      </CookbookProvider>
+    </BrowserRouter>
   );
-}
-
+};
 export default App;

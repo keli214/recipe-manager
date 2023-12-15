@@ -1,0 +1,177 @@
+h2 {
+  display: flex;
+  padding-left: 2vw;
+  font-size: 4vh;
+}
+
+recipe-card {
+  width: 260px;
+  height: 260px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#cookbook-header-contrainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#cookbook-back-button {
+  background-color: #e5383b;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+
+.title {
+  display: flex;
+  font-weight: 800;
+}
+
+.recipe-container {
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-name {
+  font-weight: bold;
+  padding: 20px;
+  line-height: 32px;
+}
+
+#cookbook-add-button {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  bottom: 3vh;
+  position: sticky;
+}
+
+#add-recipe {
+  background-color: #e5383b;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+
+@media (orientation: landscape) {
+  /* for desktop */
+  .title-container {
+    width: 100%;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  .title {
+    font-weight: 800;
+    font-size: 6vh;
+    padding-top: 10vh;
+    margin: 0;
+  }
+
+  #cookbook-back-button-container {
+    padding-right: 3vw;
+  }
+
+  #cookbook-back-button {
+    height: 8vh;
+    width: 9vw;
+    font-size: 2vw;
+    border-radius: 2vh;
+  }
+
+  .recipe-container {
+    column-gap: 2vw;
+    width: 100%;
+    flex-direction: row;
+    row-gap: 5vh;
+    padding-bottom: 3vw;
+  }
+
+  #cookbook-add-button {
+    max-width: 1100px;
+  }
+
+  #add-recipe {
+    height: 8vh;
+    width: 20vw;
+    font-size: 2vw;
+    border-radius: 2vh;
+  }
+
+  .button-name {
+    font-size: 2vw;
+  }
+}
+
+@media (orientation: portrait) {
+  /* for mobile phones: */
+  .title-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 8vw;
+    margin: 0;
+    padding-top: 3vw;
+  }
+
+  #cookbook-back-button-container {
+    padding-top: 1.5vh;
+    padding-right: 5vw;
+  }
+
+  #cookbook-back-button {
+    height: 4vh;
+    width: 18vw;
+    font-size: 3.5vw;
+    border-radius: 1vh;
+  }
+
+  .recipe-container {
+    width: 100%;
+    flex-direction: row;
+    column-gap: 5vw;
+    row-gap: 3vh;
+    padding-bottom: 5vh;
+  }
+
+  #cookbook-add-button {
+    max-width: 600px;
+  }
+
+  .button-name {
+    font-size: 3vh;
+  }
+
+  h2 {
+    display: flex;
+    padding-left: 3vw;
+    font-size: 5vw;
+  }
+
+  #add-recipe{
+    height: 4vh;
+    width: 30vw;
+    font-size: 3.5vw;
+    border-radius: 1vh;
+  }
+}

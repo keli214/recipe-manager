@@ -1,0 +1,214 @@
+* {
+  text-shadow: none;
+}
+
+a {
+  text-decoration: none;
+  padding-left: 0.5em;
+}
+
+.hide-recipe-card-part {
+  display: none;
+}
+
+#recipe-card-top-level {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+
+#recipe-card {
+  box-sizing: border-box;
+  width: 100%;
+
+  /* I removed height, which makes card size uneven */
+
+  background-color: #f2e4e9;
+  padding: 3%;
+  border-radius: 1vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#recipe-card-image {
+  max-width: 70%;
+  max-height: 60%;
+  border-radius: 1vw;
+}
+
+#recipe-card-title {
+  margin: 0;
+  width: 90%;
+  height: 20%;
+  font-size: 3vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+#recipe-buttons-container {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+#recipe-info-button {
+  width: 100%;
+  appearance: none;
+  background: none;
+  color: #3f3f3f;
+  border-radius: 1.5vw;
+  border-style: solid;
+  border-color: #8f8f8f;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+}
+
+#recipe-info-button:hover {
+  filter: brightness(120%);
+}
+
+#recipe-info-button:active {
+  background: none;
+  filter: brightness(100%);
+}
+
+#recipe-info {
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+#recipe-card-action {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  padding-right: 0.5em;
+}
+
+#recipe-card-add-button {
+  background: none;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+#recipe-card-add-button:hover {
+  filter: brightness(120%);
+}
+
+#recipe-card-add-button:active {
+  background: none;
+  filter: brightness(100%);
+}
+
+#recipe-card-delete-button {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+#recipe-card-delete-button:hover {
+  filter: brightness(150%);
+}
+
+#recipe-card-delete-button:active {
+  background: none;
+  filter: brightness(100%);
+}
+
+@media (orientation: portrait) {
+  #recipe-card-title {
+    font-size: 3vw;
+  }
+
+  #recipe-card-add-image-outline {
+    width: 2.5vh;
+    height: 2.5vh;
+    border-style: solid;
+    border-width: 0.5vw;
+    border-radius: 50vw;
+    border-color: #7a7a7a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #recipe-card-add-image-content {
+    width: 2.5vh;
+    height: 2.5vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #recipe-card-add-image-content::before {
+    content: "";
+    position: absolute;
+    background: #7a7a7a;
+    width: 0.2vh;
+    height: 1.5vh;
+  }
+
+  #recipe-card-add-image-content::after {
+    content: "";
+    position: absolute;
+    background: #7a7a7a;
+    height: 0.2vh;
+    width: 1.5vh;
+  }
+}
+
+@media (orientation: landscape) {
+  #recipe-card-title {
+    font-size: 3vh;
+  }
+
+  #recipe-card-add-image-outline {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-style: solid;
+    border-width: 0.35vh;
+    border-radius: 50vw;
+    border-color: #7a7a7a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #recipe-card-add-image-content {
+    width: 2.5vw;
+    height: 2.5vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #recipe-card-add-image-content::before {
+    content: "";
+    position: absolute;
+    background: #7a7a7a;
+    width: 0.2vw;
+    height: 1.5vw;
+  }
+
+  #recipe-card-add-image-content::after {
+    content: "";
+    position: absolute;
+    background: #7a7a7a;
+    height: 0.2vw;
+    width: 1.5vw;
+  }
+}

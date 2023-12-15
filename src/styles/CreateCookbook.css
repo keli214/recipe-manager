@@ -1,0 +1,171 @@
+.add-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.add-title {
+  display: flex;
+  font-weight: 800;
+  margin: 0;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.input-container div {
+  width: 100vw;
+  margin: 0;
+  padding-bottom: 1vh;
+  font-size: 2vw;
+}
+
+#cancel-button-container {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#cancel-button {
+  background-color: #fff;
+  border: none;
+  font-size: 2.5vw;
+  color: #ba181b;
+}
+
+@media (hover: hover) {
+  button:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+  }
+}
+
+#save-button {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#save-button button {
+  background-color: #ba181b;
+  border: none;
+  border-radius: 20px;
+  color: white;
+}
+
+.input-container input {
+  padding: 12px;
+  font-style: normal;
+  font-family: Helvetica, sans-serif;
+  box-shadow: 0 4px 16px #33333314, 0 4px 4px #3333330a;
+  border-radius: 5px;
+  border: none;
+  resize: none;
+}
+
+@media (orientation: landscape) {
+  /* for desktop */
+  .add-title-container {
+    padding-top: 14vh;
+    padding-bottom: 10vh;
+  }
+
+  .add-title {
+    font-weight: 800;
+    font-size: 6vh;
+    line-height: 12vh;
+  }
+
+  .input-container input {
+    width: 50vw;
+    height: 5vh;
+    font-size: 3vh;
+  }
+
+  .input-container label {
+    display: inline-block;
+    width: 30vw;
+    text-align: right;
+  }
+
+  #save-button {
+    padding-top: 8vh;
+  }
+
+  #save-button button {
+    height: 8vh;
+    width: 20vw;
+    font-size: 2vw;
+  }
+
+  #cancel-button {
+    max-width: 20vw;
+    padding: 2vw;
+    font-size: 3vh;
+  }
+}
+
+@media (orientation: portrait) {
+  /* for mobile phones: */
+  .add-title-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 6vh;
+  }
+
+  .add-title {
+    font-size: 4vh;
+  }
+
+  #cancel-button {
+    max-width: 30vw;
+    padding: 2vh;
+    font-size: 4vw;
+  }
+
+  .input-container {
+    padding-top: 4vh;
+    padding-left: 20vw;
+  }
+
+  #save-button button {
+    height: 6vh;
+    width: 30vw;
+    width: 34vw;
+    font-size: 4vw;
+    border-radius: 3vw;
+  }
+
+  .input-container input {
+    width: 80vw;
+    height: 5vh;
+    font-size: 3vh;
+  }
+
+  .input-container label {
+    display: flex;
+    width: 30vw;
+    text-align: right;
+    font-size: 3vh;
+  }
+
+  #save-button {
+    padding-top: 8vh;
+  }
+}

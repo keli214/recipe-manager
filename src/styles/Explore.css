@@ -1,0 +1,369 @@
+.make-invisible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+#explore-top-level {
+  display: flex; /* Row alignment */
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#filter-section {
+  height: min-content;
+  box-sizing: border-box;
+  background-color: #e7e4e6;
+  border-radius: 1vw;
+  padding: 2.5vw;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#filter-by-text {
+  font-weight: bold;
+  font-size: 2vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.plus,
+.minus {
+  width: 20px;
+  height: 20px;
+}
+
+.filter-choice {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filter-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Checkbox related */
+
+.checkbox-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: min(20px, 4vw);
+  align-self: center;
+  height: min(30px, 4vh);
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.filter-option {
+  box-sizing: border-box;
+  align-self: center;
+  width: 100%;
+  padding-left: 2%;
+  cursor: pointer;
+}
+
+/* END Checkbox Related */
+
+#display-section {
+  height: min-content;
+  box-sizing: border-box;
+  border-radius: 1vw;
+  background-color: hsl(359deg 60% 75%);
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#explore-search-section {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Details taken from  https://www.w3schools.com/howto/howto_css_searchbar.asp */
+#search-bar {
+  border: 1px solid #000;
+  box-sizing: border-box;
+  box-shadow: 0 4px 4px rgba(0 0 0 / 25%);
+  border-radius: 0.5vw;
+  font-size: 1em;
+  width: 60%;
+  height: 100%;
+  text-align: center;
+  background-image: url("../images/magnifyingglass.png");
+  background-repeat: no-repeat;
+  background-position: 1vw;
+}
+
+#apply-filters {
+  border-radius: 50vh;
+  background-color: #ba181b;
+  color: #fff;
+  border-style: none;
+  cursor: pointer;
+  margin-top: 2vh;
+  margin-bottom: 4%;
+}
+
+#apply-filters:hover {
+  filter: brightness(90%);
+}
+
+#apply-filters:active {
+  filter: brightness(110%);
+}
+
+#clear-filters-button {
+  background: none;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2em;
+  color: #000;
+  cursor: pointer;
+}
+
+.filter-choice:hover,
+#clear-filters-button:hover {
+  filter: brightness(150%);
+  background-color: #2e2e2e59;
+}
+
+.filter-choice:active,
+#clear-filters-button:active {
+  background-color: #131313a8;
+  filter: brightness(100%);
+}
+
+#search-button {
+  padding: 0;
+  width: 15%;
+  height: 100%;
+  margin-left: 3%;
+  background-color: #ba181b;
+  color: #fff;
+  border-style: none;
+  border-radius: 50vh;
+  cursor: pointer;
+  font-size: 1em;
+  text-align: center;
+}
+
+#search-button:hover {
+  filter: brightness(90%);
+}
+
+#search-button:active {
+  filter: brightness(110%);
+}
+
+#explore-title-text {
+  height: 10%;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center; /* Title, search for text */
+  margin: 1% 0;
+}
+
+#no-results-text {
+  height: 5%;
+  font-size: 1em;
+  text-align: center;
+  margin: 0;
+}
+
+#recipe-cards-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: auto;
+  justify-content: space-between;
+}
+
+#load-button {
+  /* Details taken from Figma */
+  border: 1px solid #adadad;
+  border-radius: 1vw;
+  box-sizing: border-box;
+  height: 6vh;
+  width: 10vw;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#load-button:hover {
+  filter: brightness(120%);
+}
+
+#load-button:active {
+  filter: brightness(100%);
+}
+
+.filter-input-box {
+  max-width: 90%;
+}
+
+recipe-card {
+  margin-top: 2vh;
+}
+
+@media (orientation: landscape) {
+  #filter-section {
+    width: 20%;
+    min-height: 85vh;
+    position: sticky;
+    flex-direction: column;
+  }
+
+  #display-section {
+    width: 80%;
+    min-height: 85vh;
+  }
+
+  #recipe-cards-section {
+    margin-bottom: 2vh;
+  }
+
+  #apply-filters {
+    width: 10vw;
+    height: 5vh;
+  }
+
+  #clear-filters-button {
+    width: 12vw;
+    height: 5vh;
+    font-size: 1.5vw;
+  }
+
+  .filter-choice {
+    font-size: 1.5vw;
+    margin: 0;
+  }
+
+  .filter-option {
+    font-size: 1.5vw;
+  }
+
+  #note {
+    margin: 0 0 1vh;
+    font-size: 1.5vw;
+    padding-left: 0.5vw;
+  }
+}
+
+@media (orientation: portrait) {
+  #explore-top-level {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    flex-direction: column;
+  }
+
+  #note {
+    margin: 1vh 0;
+    font-size: 3vw;
+    padding-left: 3vw;
+  }
+
+  #filter-section {
+    flex-direction: column;
+  }
+
+  #apply-filters {
+    width: 30vw;
+    height: 4vh;
+    margin-left: 30vw;
+  }
+
+  #clear-filters-button {
+    width: 30vw;
+    height: 4vh;
+    margin-left: 30vw;
+    font-size: 3vw;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin: 0;
+    height: 3vh;
+  }
+
+  #display-section {
+    width: 100vw;
+    justify-content: flex-start;
+  }
+
+  #filter-by-text {
+    display: inline;
+    font-size: 3vw;
+    padding: 0;
+    margin: 0;
+  }
+
+  .filter-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-choice {
+    font-size: 3vw;
+    margin: 0;
+  }
+
+  .filter-option {
+    font-size: 3vw;
+  }
+
+  form {
+    padding-top: 1vw;
+  }
+
+  #search-button {
+    width: 25%;
+    margin-left: 2%;
+  }
+
+  #recipe-cards-section {
+    width: 90%;
+    margin-bottom: 1%;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: auto;
+    justify-content: space-around;
+    align-content: space-between;
+    align-items: stretch;
+  }
+
+  #explore-title-text {
+    font-size: 3vh;
+    height: 4%;
+  }
+
+  #load-button-container {
+    padding: 1vh;
+  }
+
+  #load-button {
+    font-size: 3vw;
+    width: 30vw;
+    height: 4vh;
+  }
+}
