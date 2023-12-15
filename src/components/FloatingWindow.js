@@ -1,5 +1,5 @@
 import Button from "./Button";
-import { useCookbook } from "../CookbookContext";
+import { useCookbook } from "../contexts/CookbookContext";
 import { useState } from "react";
 import "../styles/FloatingWindow.css";
 const FloatingWindow = () => {

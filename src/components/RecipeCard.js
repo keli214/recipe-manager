@@ -1,7 +1,7 @@
 import Button from "./Button";
 import "../styles/RecipeCard.css";
 import { useLocation } from "react-router-dom";
-import { useCookbook } from "../CookbookContext";
+import { useCookbook } from "../contexts/CookbookContext";
 const RecipeCard = ({ recipe }) => {
   const location = useLocation();
   const { deleteRecipe, openFloatingWindow } = useCookbook();

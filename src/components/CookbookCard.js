@@ -1,6 +1,6 @@
 import "../styles/CookbookCard.css";
 import Button from "./Button";
-import { useCookbook } from "../CookbookContext";
+import { useCookbook } from "../contexts/CookbookContext";
 
 const CookbookCard = ({ cookbook }) => {
   const { deleteCookbook } = useCookbook();

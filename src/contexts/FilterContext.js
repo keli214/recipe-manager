@@ -1,4 +1,5 @@
-import React, { createContext, useReducer, useState, useContext } from "react";
+import { createContext, useReducer, useState, useContext } from "react";
+
 const CUISINE_FILTERS = [
   "African",
   "American",

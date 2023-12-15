@@ -1,8 +1,8 @@
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Button from "../components/Button";
 import { useState, useEffect } from "react";
-import { useRecipe } from "../RecipeContext";
-import { useCookbook } from "../CookbookContext";
+import { useRecipe } from "../contexts/RecipeContext";
+import { useCookbook } from "../contexts/CookbookContext";
 import "../styles/Recipe.css";
 import Ingredient from "../components/Ingredient";
 

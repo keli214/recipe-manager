@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import RecipeCard from "../components/RecipeCard";
 import Button from "../components/Button";
 import { useState, useEffect } from "react";
-import { useCookbook } from "../CookbookContext";
+import { useCookbook } from "../contexts/CookbookContext";
 
 const Cookbook = () => {
   const { cookbooks } = useCookbook();

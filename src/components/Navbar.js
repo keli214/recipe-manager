@@ -3,9 +3,9 @@ import Tab from "./Tab";
 import "../styles/Navbar.css";
 import { Outlet } from "react-router-dom";
 import FloatingWindow from "./FloatingWindow";
-import { useCookbook } from "../CookbookContext";
+import { useCookbook } from "../contexts/CookbookContext";
 import { useEffect } from "react";
-import { useRecipe } from "../RecipeContext";
+import { useRecipe } from "../contexts/RecipeContext";
 const Navbar = ({ title }) => {
   const { isFloatingWindowOpen, fetchCookbooks } = useCookbook();
   const { fetchRandomRecipes } = useRecipe();

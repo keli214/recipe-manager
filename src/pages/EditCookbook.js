@@ -3,7 +3,7 @@ import "../styles/CreateCookbook.css";
 import Button from "../components/Button";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useCookbook } from "../CookbookContext";
+import { useCookbook } from "../contexts/CookbookContext";
 const EditCookbook = () => {
   const { cookbooks, editCookbook } = useCookbook();
   const [title, setTitle] = useState("");

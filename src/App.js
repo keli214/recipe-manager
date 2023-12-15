@@ -8,9 +8,9 @@ import Cookbook from "./pages/Cookbook";
 import Recipe from "./pages/Recipe";
 import EditRecipe from "./pages/EditRecipe";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CookbookProvider } from "./CookbookContext";
-import { RecipeProvider } from "./RecipeContext";
-import { FilterProvider } from "./FilterContext";
+import { CookbookProvider } from "./contexts/CookbookContext";
+import { RecipeProvider } from "./contexts/RecipeContext";
+import { FilterProvider } from "./contexts/FilterContext";
 
 const App = () => {
   return (

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useFilter } from "../FilterContext";
+import { useFilter } from "../contexts/FilterContext";
 const Filter = ({ isVisible, filterType }) => {
   const {
     isCleared,
@@ -59,7 +59,7 @@ const Filter = ({ isVisible, filterType }) => {
 
   return (
     visible && (
-      <form id="filter-cuisines" className="filter-choices-form">
+      <form data-testid="filter" id="filter-cuisines" className="filter-choices-form">
         {currFilter.map((filter, index) => (
           <div key={index} className="checkbox-container">
             <label className="filter-option">

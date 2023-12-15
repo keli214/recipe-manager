@@ -2,7 +2,7 @@ import RecipeCard from "../components/RecipeCard";
 import "../styles/Home.css";
 import home_img from "../images/home-pasta.jpg";
 import Button from "../components/Button";
-import { useRecipe } from "../RecipeContext";
+import { useRecipe } from "../contexts/RecipeContext";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

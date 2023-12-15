@@ -1,7 +1,7 @@
 import Button from "../components/Button";
 import "../styles/Cookbook.css";
 import CookbookCard from "../components/CookbookCard";
-import { useCookbook } from "../CookbookContext";
+import { useCookbook } from "../contexts/CookbookContext";
 
 const Cookbooks = () => {
   const { cookbooks } = useCookbook();

@@ -1,10 +1,10 @@
-import Button from "../components/Button";
 import { useState, useEffect } from "react";
-import { useRecipe } from "../RecipeContext";
 import "../styles/Explore.css";
+import Button from "../components/Button";
 import RecipeCard from "../components/RecipeCard";
 import Filter from "../components/Filter";
-import { useFilter } from "../FilterContext";
+import { useRecipe } from "../contexts/RecipeContext";
+import { useFilter } from "../contexts/FilterContext";
 const Explore = () => {
   const FILTERS = ["cuisine", "diet", "intolerance", "meal"];
   const { recipesAPI, fetchRandomRecipes, fetchRecipes } = useRecipe();
