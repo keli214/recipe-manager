@@ -166,13 +166,10 @@ const EditRecipe = () => {
               setCurrentRecipe((prevRecipe) => {
                 const updatedRecipe = {
                   ...prevRecipe,
-                  ingredients: [...prevRecipe.ingredients],
                 };
-                const updatedIngredients = [
-                  ...updatedRecipe.ingredients,
-                  DEFAULT_INGREDIENT,
-                ];
-                updatedRecipe.ingredients = updatedIngredients;
+                updatedRecipe.ingredients = updatedRecipe.ingredients
+                  ? [...updatedRecipe.ingredients, DEFAULT_INGREDIENT]
+                  : [DEFAULT_INGREDIENT];
                 return updatedRecipe;
               })
             }
@@ -242,15 +239,22 @@ const EditRecipe = () => {
               text="Add Instruction"
               onClick={() =>
                 setCurrentRecipe((prevRecipe) => {
-                  const updatedRecipe = {
+                  let updatedRecipe = {
                     ...prevRecipe,
-                    instructions: [...prevRecipe.instructions],
                   };
-                  const updatedInstructions = [
-                    ...updatedRecipe.instructions,
-                    DEFAULT_INSTRUCTION,
-                  ];
-                  updatedRecipe.instructions = updatedInstructions;
+                  if (updatedRecipe.instructions) {
+                    const updatedInstructions = [
+                      ...updatedRecipe.instructions,
+                      DEFAULT_INSTRUCTION,
+                    ];
+                    updatedRecipe.instructions = updatedInstructions;
+                  } else {
+                    updatedRecipe = {
+                      ...updatedRecipe,
+                      instructions: [DEFAULT_INSTRUCTION],
+                    };
+                  }
+
                   return updatedRecipe;
                 })
               }

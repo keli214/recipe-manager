@@ -20,10 +20,10 @@ const Recipe = () => {
     const fetchData = async () => {
       try {
         if (location.pathname.includes("cookbook")) {
-          const recipeDB = await getRecipe(cookbookId, recipeId);
+          const recipeDB = await getRecipe(cookbookId, Number(recipeId));
           setCurrentRecipe(recipeDB);
         } else {
-          const recipeFromAPI = await fetchRecipe(recipeId);
+          const recipeFromAPI = await fetchRecipe(Number(recipeId));
           setCurrentRecipe(recipeFromAPI);
         }
       } catch (error) {

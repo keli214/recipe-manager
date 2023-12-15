@@ -74,14 +74,16 @@ const CookbookProvider = ({ children }) => {
   //Get recipe
   const getRecipe = async (cookbookID, recipeID) => {
     try {
-      const cookbook = await fetchCookbook(cookbookID);
-      const recipe = cookbook.recipes.find((recipe) => recipe.id === recipeID);
-      if (recipe) {
-        return recipe;
+      const currCookbook = await fetchCookbook(cookbookID);
+      const foundRecipe = currCookbook.recipes.find(
+        (recipe) => Number(recipe.id) === Number(recipeID)
+      );
+      if (foundRecipe) {
+        return foundRecipe;
       } else {
         throw new Error(`Recipe with ID ${recipeID} not found in cookbook.`);
       }
-    } catch (error){
+    } catch (error) {
       console.error("Error fetching recipe:", error);
     }
   };
@@ -107,8 +109,9 @@ const CookbookProvider = ({ children }) => {
 
   //Edit recipe
   const editRecipe = async (editedRecipe, cookbookId) => {
-    
-    const cookbookToEdit = cookbooks.find((cookbook) => cookbookId === cookbook._id);
+    const cookbookToEdit = cookbooks.find(
+      (cookbook) => cookbookId === cookbook._id
+    );
     const updatedCookbook = {
       ...cookbookToEdit,
       recipes: cookbookToEdit.recipes.map((recipe) =>
