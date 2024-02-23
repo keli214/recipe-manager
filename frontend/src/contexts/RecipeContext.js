@@ -1,5 +1,6 @@
-import React, { createContext, useReducer, useContext } from "react";
+import { createContext, useReducer, useContext } from "react";
 import recipe_img from "../images/pasta.jpg";
+const SPOONACULAR_ENABLED = true;
 const SPOONACULAR_API_KEY = "83c84ad2b0e4486f93cfbe9658d21c66";
 // const SPOONACULAR_API_KEY = "a5cef3ea43e941f0b3a9c1c3af469c26";
 const MOCK_RECIPES_ARRAY = {
@@ -77,13 +78,12 @@ const initialState = {
 const RecipeContext = createContext();
 
 const RecipeProvider = ({ children }) => {
-  let SPOONACULAR_ENABLED = false;
   const [state, dispatch] = useReducer(recipeReducer, initialState);
   const { recipesAPI } = state;
 
   //Fetch recipes with filters
   const fetchRecipes = async (filtersObj) => {
-    console.log(filtersObj)
+    console.log(filtersObj);
     let requestUrl =
       "https://api.spoonacular.com/recipes/complexSearch?apiKey=" +
       SPOONACULAR_API_KEY +
@@ -96,7 +96,6 @@ const RecipeProvider = ({ children }) => {
     }
 
     const responseData = await makeRequest(requestUrl);
-
     const responseData_short = responseData.results.map((recipe) => {
       const recipe_short = {
         id: recipe.id,

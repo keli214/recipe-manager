@@ -28,7 +28,7 @@ const Explore = () => {
   useEffect(() => {
     setSearchValue({});
     constructFilters();
-  }, [checkedFilter]);
+  }, [checkedFilter, queryValue]);
 
   const handleSearch = async () => {
     try {

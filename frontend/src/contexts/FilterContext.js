@@ -1,7 +1,6 @@
 import { createContext, useReducer, useState, useContext } from "react";
 
 const CUISINE_FILTERS = [
-  "African",
   "American",
   "British",
   "Cajun",

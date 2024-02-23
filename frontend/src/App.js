@@ -15,8 +15,8 @@ import { FilterProvider } from "./contexts/FilterContext";
 const App = () => {
   return (
     <BrowserRouter>
-      <CookbookProvider>
-        <RecipeProvider>
+      <RecipeProvider>
+        <CookbookProvider>
           <FilterProvider>
             <Routes>
               <Route path="/" element={<Navbar title="Impasta Rosta" />}>
@@ -41,8 +41,8 @@ const App = () => {
               </Route>
             </Routes>
           </FilterProvider>
-        </RecipeProvider>
-      </CookbookProvider>
+        </CookbookProvider>
+      </RecipeProvider>
     </BrowserRouter>
   );
 };

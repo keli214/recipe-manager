@@ -15,7 +15,7 @@ const Recipe = () => {
   const location = useLocation();
   const { getRecipe, openFloatingWindow } = useCookbook();
 
-  //fetch the recipe details from the API
+  //fetch the recipe details from the API or DB 
   useEffect(() => {
     const fetchData = async () => {
       try {

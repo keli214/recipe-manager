@@ -1,11 +1,12 @@
-import React, { createContext, useState, useContext } from "react";
-
+import { createContext, useState, useContext } from "react";
+import { useRecipe } from "./RecipeContext";
 const CookbookContext = createContext();
 
 const CookbookProvider = ({ children }) => {
   const [cookbooks, setCookbooks] = useState([]);
   const [recipeDB, setRecipeDB] = useState({});
   const [isFloatingWindowOpen, setFloatingWindowOpen] = useState(false);
+  const {fetchRecipe} = useRecipe();
 
   //Fetch cookbooks
   const fetchCookbooks = async () => {
@@ -71,7 +72,7 @@ const CookbookProvider = ({ children }) => {
       : alert(`Error editing cookbook ${id}`);
   };
 
-  //Get recipe
+  //Get recipe from DB 
   const getRecipe = async (cookbookID, recipeID) => {
     try {
       const currCookbook = await fetchCookbook(cookbookID);
@@ -90,15 +91,17 @@ const CookbookProvider = ({ children }) => {
 
   //Add recipe
   const addRecipe = async (newRecipe, cookbook) => {
-    const recipeFormated = { ...newRecipe, cookbookID: cookbook._id };
     //check if the recipe already exist
-    const recipe = cookbook.recipes.find(
+    const existingRecipe = cookbook.recipes.find(
       (recipe) => recipe.id === newRecipe.id
     );
-    if (recipe) {
+    if (existingRecipe) {
       closeFloatingWindow();
-      return recipe;
+      return existingRecipe;
     }
+    // fetch the recipe details from API
+    const recipeAPI = await fetchRecipe(newRecipe.id);
+    const recipeFormated = { ...recipeAPI, cookbookID: cookbook._id };
     const updatedCookbook = {
       ...cookbook,
       recipes: [...cookbook.recipes, recipeFormated],
