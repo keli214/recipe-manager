@@ -77,7 +77,7 @@ A a responsive, dynamic singe-page website that provides everything you need to 
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://github.com/keli214/recipe-manager/frontend/src/images/screenshot.png" alt="screenshot" />
+  <img src="/frontend/src/images/screenshot.png" alt="screenshot" />
 </div>
 
 
