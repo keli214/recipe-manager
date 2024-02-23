@@ -1,6 +1,5 @@
 <div align="center">
 
-  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
   <h1>Recipe Manager</h1>
   
   <p>
