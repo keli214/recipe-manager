@@ -2,32 +2,28 @@ var express = require("express")
 var bodyPaser = require("body-parser")
 var cookbooksRoutes = require("./routes/cookbooks")
 var mongoose = require("mongoose")
-var cors = require("cors")
-
+const cors = require("cors")
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 
-app.use(bodyPaser.json());
+//database connection
+require("./services/connections")
 
+//configs
+app.use(bodyPaser.json());
 app.use(bodyPaser.urlencoded({extended:false}));
 
+//bind routes
 app.use("/cookbooks", cookbooksRoutes);
 
 app.get("/", (req, res) => res.send("Hello from Homepage"));
 
-mongoose.set("strictQuery", false)
-mongoose
-  .connect(
-    "mongodb+srv://admin:gzgi4t0xohvP983t@cluster0.zg0upsa.mongodb.net/?retryWrites=true&w=majority"
-  )
-  .then(() => {
-    console.log("Connected to MongoDB");
-    app.listen(PORT, () =>
-      console.log(`Server runnning on port: http://localhost:${PORT}`)
-    );
-  })
-  .catch((err) => {
+app.listen(PORT, (err)=>{
+  if(err){
     console.log(err);
-  });
+  }
+  console.log(`Server Started and Listening at PORT ${PORT}`);
+})
+
