@@ -1,6 +1,6 @@
 import { createContext, useReducer, useContext } from "react";
 import recipe_img from "../images/pasta.jpg";
-const SPOONACULAR_ENABLED = False;
+const SPOONACULAR_ENABLED = false;
 const SPOONACULAR_API_KEY = process.env.SPOONACULAR_API_KEY
 const MOCK_RECIPES_ARRAY = {
   results: [
@@ -80,7 +80,7 @@ const RecipeProvider = ({ children }) => {
   const [state, dispatch] = useReducer(recipeReducer, initialState);
   const { recipesAPI } = state;
 
-  //Fetch recipes with filters
+  //Fetch recipes while applying filters
   const fetchRecipes = async (filtersObj) => {
     console.log(filtersObj);
     let requestUrl =
@@ -107,8 +107,9 @@ const RecipeProvider = ({ children }) => {
     dispatch({ type: SET_RECIPES, payload: responseData_short });
   };
 
+  //Fetch random recipes to populate the website when started
   const fetchRandomRecipes = async (numResults, addMore) => {
-    let requestUrl =
+    const requestUrl =
       "https://api.spoonacular.com/recipes/complexSearch?apiKey=" +
       SPOONACULAR_API_KEY +
       "&instructionsRequired=true&sort=random" +
@@ -129,6 +130,7 @@ const RecipeProvider = ({ children }) => {
       : dispatch({ type: SET_RECIPES, payload: responseData_short });
   };
 
+  //Fetch sepecific recipe using the recipe id
   const fetchRecipe = async (id) => {
     const requestUrl =
       "https://api.spoonacular.com/recipes/" +
@@ -161,7 +163,8 @@ const RecipeProvider = ({ children }) => {
       instructions: instructions,
     };
   };
-
+  
+  //make API calls 
   const makeRequest = async (requestUrl) => {
     if (!SPOONACULAR_ENABLED) {
       if (requestUrl.includes("complexSearch")) {
