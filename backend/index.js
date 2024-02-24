@@ -1,8 +1,8 @@
-import express from "express";
-import bodyPaser from "body-parser";
-import cookbooksRoutes from "./routes/cookbooks.js";
-import mongoose from "mongoose";
-import cors from 'cors';
+var express = require("express")
+var bodyPaser = require("body-parser")
+var cookbooksRoutes = require("./routes/cookbooks")
+var mongoose = require("mongoose")
+var cors = require("cors")
 
 const app = express();
 const PORT = 5000;

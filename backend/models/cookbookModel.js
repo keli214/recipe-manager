@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import Recipe from "./recipeModel.js";
+var mongoose = require("mongoose");
+var Recipe = require("./recipeModel");
 
 const cookbookSchema = mongoose.Schema(
   {
@@ -15,7 +15,8 @@ const cookbookSchema = mongoose.Schema(
       type: Array,
       default: [],
       required: true,
-      items: { type: Recipe.schema }},
+      items: { type: Recipe.schema },
+    },
   },
   {
     timestamps: true,
@@ -24,4 +25,4 @@ const cookbookSchema = mongoose.Schema(
 
 const Cookbook = mongoose.model("Cookbook", cookbookSchema);
 
-export default Cookbook;
+module.exports = Cookbook;

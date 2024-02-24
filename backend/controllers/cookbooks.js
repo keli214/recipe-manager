@@ -1,7 +1,8 @@
-import Cookbook from "../models/cookbookModel.js";
+var Cookbook = require("../models/cookbookModel")
+
 const cookbooks = [];
 
-export const createCookbook = async (req, res) => {
+const createCookbook = async (req, res) => {
   try {
     const cookbook = await Cookbook.create(req.body);
     res.status(200).json(cookbook);
@@ -11,7 +12,7 @@ export const createCookbook = async (req, res) => {
   }
 };
 
-export const getCookbooks = async (req, res) => {
+const getCookbooks = async (req, res) => {
   try {
     const cookbooks = await Cookbook.find({});
     res.status(200).json(cookbooks);
@@ -20,7 +21,7 @@ export const getCookbooks = async (req, res) => {
   }
 };
 
-export const getCookbook = async (req, res) => {
+const getCookbook = async (req, res) => {
   try {
     const { id } = req.params;
     const foundCookbook = await Cookbook.findById(id);
@@ -30,7 +31,7 @@ export const getCookbook = async (req, res) => {
   }
 };
 
-export const updateCookbook = async (req, res) => {
+const updateCookbook = async (req, res) => {
   try {
     const { id } = req.params;
     const { title, description, recipes } = req.body;
@@ -48,7 +49,7 @@ export const updateCookbook = async (req, res) => {
   }
 };
 
-export const deleteCookbook = async (req, res) => {
+const deleteCookbook = async (req, res) => {
   try {
     const { id } = req.params;
     const cookbook = await Cookbook.findByIdAndDelete(id);
@@ -60,3 +61,11 @@ export const deleteCookbook = async (req, res) => {
     res.status(500).json({message: error.message});
   }
 };
+
+module.exports = { 
+  createCookbook, 
+  getCookbooks, 
+  getCookbook, 
+  updateCookbook, 
+  deleteCookbook
+}
