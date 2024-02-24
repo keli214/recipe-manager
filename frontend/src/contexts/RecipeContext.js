@@ -1,8 +1,7 @@
 import { createContext, useReducer, useContext } from "react";
 import recipe_img from "../images/pasta.jpg";
-const SPOONACULAR_ENABLED = true;
-const SPOONACULAR_API_KEY = "83c84ad2b0e4486f93cfbe9658d21c66";
-// const SPOONACULAR_API_KEY = "a5cef3ea43e941f0b3a9c1c3af469c26";
+const SPOONACULAR_ENABLED = False;
+const SPOONACULAR_API_KEY = process.env.SPOONACULAR_API_KEY
 const MOCK_RECIPES_ARRAY = {
   results: [
     {
