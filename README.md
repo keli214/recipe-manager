@@ -50,19 +50,10 @@
     - [:camera: Screenshots](#camera-screenshots)
     - [:space\_invader: Tech Stack](#space_invader-tech-stack)
     - [:dart: Features](#dart-features)
-    - [:art: Color Reference](#art-color-reference)
     - [:key: Environment Variables](#key-environment-variables)
-  - [:toolbox: Getting Started](#toolbox-getting-started)
-    - [:bangbang: Prerequisites](#bangbang-prerequisites)
-    - [:gear: Installation](#gear-installation)
-    - [:test\_tube: Running Tests](#test_tube-running-tests)
     - [:running: Run Locally](#running-run-locally)
-    - [:triangular\_flag\_on\_post: Deployment](#triangular_flag_on_post-deployment)
-  - [:eyes: Usage](#eyes-usage)
+    - [:triangular\_flag\_on\_post: Run with Docker](#triangular_flag_on_post-run-with-docker)
   - [:compass: Roadmap](#compass-roadmap)
-  - [:wave: Contributing](#wave-contributing)
-    - [:scroll: Code of Conduct](#scroll-code-of-conduct)
-  - [:grey\_question: FAQ](#grey_question-faq)
   - [:warning: License](#warning-license)
   - [:handshake: Contact](#handshake-contact)
   - [:gem: Acknowledgements](#gem-acknowledgements)
@@ -87,34 +78,23 @@ A a responsive, dynamic singe-page website that provides everything you need to 
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://nextjs.org/">Next.js</a></li>
     <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+    <li><a href="https://html.com/html5/">HTML 5</a></li>
+    <li><a href="https://www.w3.org/Style/CSS/">CSS</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+    <li><a href="https://nodejs.org/">Node.js</a></li>
     <li><a href="https://expressjs.com/">Express.js</a></li>
-    <li><a href="https://go.dev/">Golang</a></li>
-    <li><a href="https://nestjs.com/">Nest.js</a></li>
-    <li><a href="https://socket.io/">SocketIO</a></li>
-    <li><a href="https://www.prisma.io/">Prisma</a></li>    
-    <li><a href="https://www.apollographql.com/">Apollo</a></li>
-    <li><a href="https://graphql.org/">GraphQL</a></li>
   </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.mysql.com/">MySQL</a></li>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-    <li><a href="https://redis.io/">Redis</a></li>
-    <li><a href="https://neo4j.com/">Neo4j</a></li>
     <li><a href="https://www.mongodb.com/">MongoDB</a></li>
   </ul>
 </details>
@@ -123,68 +103,29 @@ A a responsive, dynamic singe-page website that provides everything you need to 
 <summary>DevOps</summary>
   <ul>
     <li><a href="https://www.docker.com/">Docker</a></li>
-    <li><a href="https://www.jenkins.io/">Jenkins</a></li>
-    <li><a href="https://circleci.com/">CircleCLI</a></li>
   </ul>
 </details>
 
 <!-- Features -->
 ### :dart: Features
 
-- Feature 1
-- Feature 2
-- Feature 3
-
-<!-- Color Reference -->
-### :art: Color Reference
-
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Primary Color | ![#222831](https://via.placeholder.com/10/222831?text=+) #222831 |
-| Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
-| Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
-
+- Search for Recipes
+  - apply filters to search results
+    - cusine type 
+    - diet
+    - intolerance 
+    - meal type
+- Store Recipes in Cookbook
+  - seperate recipes by cookbooks
+  - edit saved recipes
+  - ingredients shopping checklist 
 
 <!-- Env Variables -->
 ### :key: Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to your backend/config.json file and .env file respectively
 
-`API_KEY`
-
-`ANOTHER_API_KEY`
-
-<!-- Getting Started -->
-## 	:toolbox: Getting Started
-
-<!-- Prerequisites -->
-### :bangbang: Prerequisites
-
-This project uses Yarn as package manager
-
-```bash
- npm install --global yarn
-```
-
-<!-- Installation -->
-### :gear: Installation
-
-Install my-project with npm
-
-```bash
-  yarn install my-project
-  cd my-project
-```
-   
-<!-- Running Tests -->
-### :test_tube: Running Tests
-
-To run tests, run the following command
-
-```bash
-  yarn test test
-```
+`mongodb.connectionString` `SPOONACULAR_API_KEY`
 
 <!-- Run Locally -->
 ### :running: Run Locally
@@ -198,93 +139,72 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd recipe-manager
 ```
 
 Install dependencies
 
 ```bash
-  yarn install
+  cd backend
+  npm install
+  cd frontend
+  npm install
 ```
 
-Start the server
+Start the backend server
 
 ```bash
-  yarn start
+  cd backend
+  npm start
 ```
 
-
-<!-- Deployment -->
-### :triangular_flag_on_post: Deployment
-
-To deploy this project run
+Start the frontend client
 
 ```bash
-  yarn deploy
+  cd frontend
+  npm start
 ```
 
 
-<!-- Usage -->
-## :eyes: Usage
+<!-- Run with Docker -->
+### :triangular_flag_on_post: Run with Docker
 
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
+build docker images
 
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
+```bash
+  docker-compose build
 ```
+
+Run container and services
+
+```bash
+  docker-compose up
+```
+
+Use following paths
+
+```bash
+  Backend server : localhost:5000/
+  User Frontend : localhost:3000/ 
+```
+
 
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-* [x] Todo 1
-* [ ] Todo 2
-
-
-<!-- Contributing -->
-## :wave: Contributing
-
-<a href="https://github.com/keli214/recipe-manager/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=keli214/recipe-manager" />
-</a>
-
-
-Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
-
-<!-- Code of Conduct -->
-### :scroll: Code of Conduct
-
-Please read the [Code of Conduct](https://github.com/keli214/recipe-manager/blob/master/CODE_OF_CONDUCT.md)
-
-<!-- FAQ -->
-## :grey_question: FAQ
-
-- Question 1
-
-  + Answer 1
-
-- Question 2
-
-  + Answer 2
-
+* [x] Implement filters for search 
+* [ ] Implement a API proxy for Spoonacular API
 
 <!-- License -->
 ## :warning: License
 
-Distributed under the no License. See LICENSE.txt for more information.
+Distributed under the no License. 
 
 
 <!-- Contact -->
 ## :handshake: Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Keli Wang - [@linkedin_handle](https://www.linkedin.com/in/keliw21452/) - keli21452@gmail.com
 
 Project Link: [https://github.com/keli214/recipe-manager](https://github.com/keli214/recipe-manager)
 
@@ -294,8 +214,6 @@ Project Link: [https://github.com/keli214/recipe-manager](https://github.com/kel
 
 Use this section to mention useful resources and libraries that you have used in your projects.
 
- - [Shields.io](https://shields.io/)
+ - [Spoonacular](https://spoonacular.com/)
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
- - [Readme Template](https://github.com/othneildrew/Best-README-Template)
 
