@@ -204,7 +204,7 @@ Distributed under the no License.
 <!-- Contact -->
 ## :handshake: Contact
 
-Keli Wang - [@linkedin_handle](https://www.linkedin.com/in/keliw21452/) - keli21452@gmail.com
+Keli Wang - [Linkedin_profile](https://www.linkedin.com/in/keliw21452/) - keli21452@gmail.com
 
 Project Link: [https://github.com/keli214/recipe-manager](https://github.com/keli214/recipe-manager)
 
