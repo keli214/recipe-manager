@@ -30,10 +30,6 @@
 </p>
    
 <h4>
-    <a href="https://github.com/keli214/recipe-manager/">View Demo</a>
-  <span> · </span>
-    <a href="https://github.com/keli214/recipe-manager">Documentation</a>
-  <span> · </span>
     <a href="https://github.com/keli214/recipe-manager/issues/">Report Bug</a>
   <span> · </span>
     <a href="https://github.com/keli214/recipe-manager/issues/">Request Feature</a>
