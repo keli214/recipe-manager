@@ -193,6 +193,7 @@ Use following paths
 ## :compass: Roadmap
 
 * [x] Implement filters for search 
+* [ ] Implement user login portal
 * [ ] Implement a API proxy for Spoonacular API
 
 <!-- License -->
